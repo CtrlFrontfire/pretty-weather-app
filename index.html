@@ -16,25 +16,50 @@
     <div class="weather-forecast">
       <h1>Pretty Weather Forecast</h1>
       <header>
-        <form>
-          <input type="text" placeholder="Enter a city" required />
-          <input type="submit" value="search" />
+        <form class="search-form">
+          <input
+            type="text"
+            placeholder="Enter a city"
+            required
+            class="search-form-input"
+          />
+          <input type="submit" value="search" class="search-form-button" />
         </form>
       </header>
       <main>
-        <div>
-          <h2>
-            Clear sky <br />
-            25°C <br />
-            ☀️<br />
-            London <br />
-            Thur 20 June 2024, 21:33
-          </h2>
-          <p>
-            Humidity: 66%, Wind:5.66km/h
-            <br />
-            Other info: xxx, other info: xxx;
-          </p>
+        <div class="weather-app-data">
+          <div class="temperature-container">
+            <div class="weather-app-condition">Clear sky</div>
+            <div class="weather-app-temperature">
+              25
+              <div class="weather-app-temperature-unit">°C</div>
+            </div>
+            <div class="condition-icon">☀️</div>
+          </div>
+          <div class="city-date-container">
+            <div class="weather-app-city">London</div>
+            <div class="weather-app-timestamp">
+              Thursday 20 June 2024, 21:33
+            </div>
+          </div>
+          <div class="weather-app-details">
+            <div class="high-temperature">
+              <strong>23° </strong><br />
+              High
+            </div>
+            <div class="low-temperature">
+              <strong>14°</strong> <br />
+              Low
+            </div>
+            <div class="humidity-levels">
+              <strong>66%</strong> <br />
+              Rain
+            </div>
+            <div class="wind-speed">
+              <strong>5.66km/h</strong> <br />
+              Wind
+            </div>
+          </div>
         </div>
       </main>
       <footer>

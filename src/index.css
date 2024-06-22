@@ -1,14 +1,114 @@
 body {
   background-color: #6643b5;
-  text-align: center;
   font-family: "Dosis", sans-serif;
 }
+a {
+  color: #6643b5;
+}
+h1,
+footer {
+  text-align: center;
+}
+header {
+  padding: 20px 0 20px 0;
+}
+footer {
+  padding: 40px 0 0 0;
+  font-size: 14px;
+}
+
 .weather-forecast {
   background: #8594e4;
   margin: 30px auto;
-  padding: 50px;
+  padding: 40px;
   max-width: 600px;
   border: 1px solid #8594e4;
   border-radius: 10px;
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0.774);
+}
+
+form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.search-form-input {
+  background-color: #d5def59c;
+  border: 1px solid #430f585b;
+  border-radius: 5px;
+  font-size: 15px;
+  width: 75%;
+  padding: 15px 20px;
+}
+input::placeholder {
+  color: #430f5881;
+}
+.search-form-button {
+  background: #6643b5;
+  color: #d5def5;
+  border: none;
+  border-radius: 5px;
+  padding: 15px 25px;
+  font-size: 16px;
+  transition: all 250ms ease-in-out;
+}
+.search-form-button:hover {
+  background: #d5def5;
+  color: #6643b5;
+  cursor: pointer;
+  box-shadow: 0px 0px 7px 1px rgba(91, 63, 159, 0.774);
+  font-weight: bold;
+}
+.weather-app-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+.temperature-container {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+.weather-app-temperature {
+  display: flex;
+}
+.weather-app-condition {
+  font-size: 20px;
+  letter-spacing: 0.2rem;
+}
+.weather-app-temperature {
+  font-size: 70px;
+  margin: 5px auto;
+  font-weight: bold;
+}
+.condition-icon {
+  font-size: 90px;
+  margin: 10px;
+}
+.weather-app-city {
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+}
+.weather-app-timestamp {
+  font-size: 20px;
+  letter-spacing: 0.1rem;
+}
+.weather-app-details {
+  display: block;
+  margin: 20px auto 10px;
+  column-count: 2;
+  column-fill: balance;
+  font-size: 20px;
+}
+.high-temperature,
+.low-temperature,
+.wind-speed,
+.humidity-levels {
+  text-align: center;
+  width: 150px;
+  padding: 10px;
 }
