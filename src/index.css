@@ -94,16 +94,30 @@ input::placeholder {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.temperature-unit {
+  display: flex;
+}
 .weather-app-temperature {
   font-size: 70px;
-  margin: 5px auto;
   font-weight: bold;
+  margin: 5px 0;
   background-image: linear-gradient(0deg, transparent 0, white 100%);
   color: transparent;
   text-align: center;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.weather-app-unit {
+  padding-top: 5px;
+  margin-top: 5px;
+  font-size: 50px;
+  background-image: linear-gradient(0deg, transparent 0, white 100%);
+  color: transparent;
+  text-align: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .condition-icon {
   font-size: 90px;
   margin: 10px;

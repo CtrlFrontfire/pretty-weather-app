@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <title>Pretty Weather Forecast</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/index.css" />
   </head>
   <body>
@@ -32,9 +33,11 @@
         <div class="weather-app-data">
           <div class="temperature-container">
             <div class="weather-app-condition">Clear sky</div>
-            <div class="weather-app-temperature">
-              25
-              <div class="weather-app-temperature-unit">°C</div>
+            <div class="temperature-unit">
+              <div class="weather-app-temperature" id="weather-app-temperature">
+                25
+              </div>
+              <div class="weather-app-unit">°</div>
             </div>
             <div class="condition-icon">☀️</div>
           </div>
