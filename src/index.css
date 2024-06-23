@@ -46,13 +46,14 @@ form {
   border: 1px solid #430f585b;
   border-radius: 5px;
   font-size: 15px;
-  width: 75%;
+  width: 80%;
   padding: 15px 20px;
 }
 input::placeholder {
   color: #430f5881;
 }
-.search-form-button {
+
+.search-button {
   background: #6643b5;
   color: #d5def5;
   border: none;
@@ -61,13 +62,14 @@ input::placeholder {
   font-size: 16px;
   transition: all 250ms ease-in-out;
 }
-.search-form-button:hover {
+.search-button:hover {
   background: #d5def5;
   color: #6643b5;
   cursor: pointer;
   box-shadow: 0px 0px 7px 1px rgba(91, 63, 159, 0.774);
   font-weight: bold;
 }
+
 .weather-app-data {
   display: flex;
   flex-direction: column;

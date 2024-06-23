@@ -19,12 +19,13 @@
       <header>
         <form class="search-form" id="search-form">
           <input
-            type="text"
+            type="search"
             placeholder="Enter a city"
             required
+            id="search-input"
             class="search-form-input"
           />
-          <input type="submit" value="search" class="search-form-button" />
+          <input type="submit" value="search" class="search-button" />
         </form>
       </header>
       <main>
@@ -38,7 +39,7 @@
             <div class="condition-icon">☀️</div>
           </div>
           <div class="city-date-container">
-            <div class="weather-app-city">London</div>
+            <div class="weather-app-city" id="weather-app-city">London</div>
             <div class="weather-app-timestamp">
               Thursday 20 June 2024, 21:33
             </div>
