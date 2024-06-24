@@ -1,18 +1,10 @@
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#weather-app-temperature");
   let temperature = Math.round(response.data.temperature.current);
-
   let cityElement = document.querySelector("#weather-app-city");
-  cityElement.innerHTML = response.data.city;
-
-  temperatureElement.innerHTML = temperature;
-
   let currentConditionElement = document.querySelector(
     "#weather-app-condition"
   );
-
-  currentConditionElement.innerHTML = response.data.condition.description;
-
   let realFeelElement = document.querySelector("#feel-like");
   let realFeel = Math.round(response.data.temperature.feels_like);
   let pressureElement = document.querySelector("#current-pressure");
@@ -20,7 +12,12 @@ function displayTemperature(response) {
   let windSpeedElement = document.querySelector("#current-wind");
   let timeElement = document.querySelector("#weather-app-timestamp");
   let date = new Date(response.data.time * 1000);
+  let iconElement = document.querySelector("#icon");
 
+  cityElement.innerHTML = response.data.city;
+  temperatureElement.innerHTML = temperature;
+  currentConditionElement.innerHTML = response.data.condition.description;
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="condition-icon" />`;
   realFeelElement.innerHTML = `${realFeel}°`;
   pressureElement.innerHTML = `${response.data.temperature.pressure}`;
   humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
@@ -69,21 +66,23 @@ function formatDate(date) {
   ];
 
   let day = days[date.getDay()];
-
   let formattedMonth = months[month];
   return `${day} ${dateNow} ${formattedMonth} ${year}, ${hours}:${minutes}`;
 }
 
-function handleSearch(event) {
-  event.preventDefault();
-  let cityUserInput = document.querySelector("#search-input");
-  let city = cityUserInput.value;
-
+function searchCity(city) {
   let apiKey = "d32099afo5328e0346f4tb17db5ff833";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-
   axios.get(apiUrl).then(displayTemperature);
 }
 
+function handleSearchSubmit(event) {
+  event.preventDefault();
+  let cityUserInput = document.querySelector("#search-input");
+  searchCity(cityUserInput.value);
+}
+
 let searchFormElement = document.querySelector("#search-form");
-searchFormElement.addEventListener("submit", handleSearch);
+searchFormElement.addEventListener("submit", handleSearchSubmit);
+
+searchCity("London");
