@@ -6,21 +6,29 @@ function displayTemperature(response) {
   cityElement.innerHTML = response.data.city;
 
   temperatureElement.innerHTML = temperature;
-}
 
-function handleSearch(event) {
-  event.preventDefault();
-  let cityUserInput = document.querySelector("#search-input");
-  let city = cityUserInput.value;
+  let currentConditionElement = document.querySelector(
+    "#weather-app-condition"
+  );
 
-  let apiKey = "d32099afo5328e0346f4tb17db5ff833";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  currentConditionElement.innerHTML = response.data.condition.description;
 
-  axios.get(apiUrl).then(displayTemperature);
+  let realFeelElement = document.querySelector("#feel-like");
+  let realFeel = Math.round(response.data.temperature.feels_like);
+  let pressureElement = document.querySelector("#current-pressure");
+  let humidityElement = document.querySelector("#current-humidity");
+  let windSpeedElement = document.querySelector("#current-wind");
+  let timeElement = document.querySelector("#weather-app-timestamp");
+  let date = new Date(response.data.time * 1000);
+
+  realFeelElement.innerHTML = `${realFeel}°`;
+  pressureElement.innerHTML = `${response.data.temperature.pressure}`;
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  windSpeedElement.innerHTML = `${response.data.wind.speed}km/h`;
+  timeElement.innerHTML = formatDate(date);
 }
 
 function formatDate(date) {
-  let day = date.getDay();
   let year = date.getFullYear();
   let month = date.getMonth();
   let dateNow = date.getDate();
@@ -60,15 +68,22 @@ function formatDate(date) {
     "December",
   ];
 
-  let formattedDay = days[day];
+  let day = days[date.getDay()];
+
   let formattedMonth = months[month];
-  return `${formattedDay} ${dateNow} ${formattedMonth} ${year}, ${hours}:${minutes}`;
+  return `${day} ${dateNow} ${formattedMonth} ${year}, ${hours}:${minutes}`;
+}
+
+function handleSearch(event) {
+  event.preventDefault();
+  let cityUserInput = document.querySelector("#search-input");
+  let city = cityUserInput.value;
+
+  let apiKey = "d32099afo5328e0346f4tb17db5ff833";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayTemperature);
 }
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearch);
-
-let currentDateElement = document.querySelector("#weather-app-timestamp");
-let currentDate = new Date();
-
-currentDateElement.innerHTML = formatDate(currentDate);

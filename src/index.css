@@ -148,8 +148,8 @@ input::placeholder {
   column-fill: balance;
   font-size: 20px;
 }
-.high-temperature,
-.low-temperature,
+.real-feel,
+.pressure,
 .wind-speed,
 .humidity-levels {
   text-align: center;
