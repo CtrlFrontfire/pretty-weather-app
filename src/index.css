@@ -17,6 +17,7 @@ header {
   padding: 10px 0 10px 0;
 }
 main {
+  padding-top: 25px;
   padding-bottom: 25px;
 }
 .weather-app {
@@ -67,8 +68,6 @@ input::placeholder {
 .weather-app-data {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  border-bottom: 1px solid #f9f7fe33;
 }
 .temperature-container {
   display: flex;
@@ -80,9 +79,9 @@ input::placeholder {
   display: flex;
 }
 .weather-app-condition {
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 0.2rem;
-  background-image: linear-gradient(0deg, transparent 0, #f2f2f2 100%);
+  background-image: linear-gradient(0deg, transparent 0, #f2f2f2 85%);
   color: transparent;
   text-align: center;
   -webkit-background-clip: text;
@@ -94,10 +93,10 @@ input::placeholder {
   height: 80px;
 }
 .weather-app-temperature {
-  font-size: 70px;
+  font-size: 65px;
   font-weight: bold;
   margin-top: 5px;
-  background-image: linear-gradient(0deg, transparent 0, #f2f2f2 100%);
+  background-image: linear-gradient(0deg, transparent 0, #f2f2f2 65%);
   color: transparent;
   text-align: center;
   -webkit-background-clip: text;
@@ -106,33 +105,35 @@ input::placeholder {
 .weather-app-unit {
   padding-top: 5px;
   margin-top: 5px;
-  font-size: 50px;
+  font-size: 45px;
   background-image: linear-gradient(0deg, transparent 0, #f2f2f2 100%);
-  color: transparent;
   text-align: center;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .condition-icon {
-  width: 200px;
-  height: 200px;
+  width: 190px;
+  height: 190px;
+  display: flex;
+  justify-content: center;
   filter: drop-shadow(0px 0px 20px rgb(255, 255, 255));
 }
+
 .weather-app-city {
-  font-size: 35px;
+  font-size: 30px;
   padding: 0 0 5px 0;
   font-weight: bold;
-  background-image: linear-gradient(0deg, transparent 0, #f2f2f2 100%);
+  background-image: linear-gradient(0deg, transparent 0, #f2f2f2 65%);
   color: transparent;
   text-align: center;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .weather-app-timestamp {
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 0.1rem;
-  background-image: linear-gradient(0deg, transparent 0, #f2f2f2 100%);
+  background-image: linear-gradient(0deg, transparent 0, #f2f2f2 85%);
   color: transparent;
   text-align: center;
   -webkit-background-clip: text;
@@ -161,25 +162,32 @@ input::placeholder {
 .weather-forecast {
   display: flex;
   justify-content: space-around;
-  margin-top: 20px;
+  align-items: center;
+  padding-top: 25px;
+  border-top: 1px solid #f9f7fe33;
 }
-.weather-forecast-date,
-.weather-forecast-temperatures {
+
+.weather-forecast-date {
   color: #f2f2f2;
   opacity: 80%;
-}
-.weather-forecast-date {
   text-align: center;
   margin-bottom: 5px;
 }
+
 .weather-forecast-icon {
-  font-size: 40px;
-  text-align: center;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0px 0px 7px rgb(255, 255, 255));
 }
+
 .weather-forecast-temperatures {
+  color: #f2f2f2;
+  opacity: 80%;
+  text-align: center;
   display: flex;
-  justify-content: center;
-  margin-top: 10px;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 10px auto;
 }
 .weather-forecast-temperature {
   padding: 0 8px;
